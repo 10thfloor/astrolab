@@ -12,7 +12,7 @@ const WelcomeMessage = glamorous.p({
 })
 
 export default class Hello extends React.Component<{}, {}> {
-  render(): any {
+  render() {
     return (
       <WelcomeMessage>Meteor, TypeScript, CSS-Next, React</WelcomeMessage>
     )
