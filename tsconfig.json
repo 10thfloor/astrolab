@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["meteor", "react"]
+    "types": ["meteor", "react"],
+    "jsx": "react"
   }
 }

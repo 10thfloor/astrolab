@@ -1,5 +1,9 @@
 import { Meteor } from 'meteor/meteor';
+import '../imports/startup/fixtures';
 
-Meteor.startup(() => {
-  // code to run on server at startup
+Meteor.users.allow({
+  update(userId, doc, fieldNames, modifier) {
+    return true;
+  }
 });
+

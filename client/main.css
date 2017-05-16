@@ -1,13 +1,15 @@
 /* CSS declarations go here */
+@import "../imports/styles/reset.css";
 
 :root {
-
+    --ff:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-
+ 
 body, html {
     width: 100vw;
     height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    background: #222;
+    background: linear-gradient(42deg,#86AF49 10%, #0062A3);
     color: white;
-}
+    margin:0; padding:0;
+    font-family: var(--ff);
+} 
