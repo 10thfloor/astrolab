@@ -1,19 +1,18 @@
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor'
 
-import * as React from 'react';
-import { render } from 'react-dom';
+import * as React from 'react'
+import { render } from 'react-dom'
 
-import Hello from '../imports/ui/components/Hello';
+import Hello from '../imports/ui/components/Hello'
 
-export default class HelloWorld extends React.Component<{},{}> {
-  render() {
+export default class HelloWorld extends React.Component<{}, {}> {
+  render(): any {
     return (
       <Hello />
-    );
+    )
   }
 }
 
 Meteor.startup(() => {
-    console.info('Enjoy Meteor with TypeScript, React & CSS-Next!');
-    render(<HelloWorld />, document.getElementById('react-app'));
-});
+    render(<HelloWorld />, document.getElementById('react-app'))
+})

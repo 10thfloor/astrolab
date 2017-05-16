@@ -1,5 +1,5 @@
-import * as React from 'react';
-import glamorous from 'glamorous';
+import * as React from 'react'
+import glamorous from 'glamorous'
 
 const WelcomeMessage = glamorous.p({
   width: '100%',
@@ -11,10 +11,10 @@ const WelcomeMessage = glamorous.p({
   textShadow: '0px 0px 2px #2C272D'
 })
 
-export default class Hello extends React.Component<{},{}> {
-  render() {
+export default class Hello extends React.Component<{}, {}> {
+  render(): any {
     return (
       <WelcomeMessage>Meteor, TypeScript, CSS-Next, React</WelcomeMessage>
-    );
+    )
   }
 }
