@@ -9,11 +9,12 @@
     "bcrypt": "^1.0.2",
     "glamor": "^2.20.25",
     "glamorous": "^3.14.0",
-    "glamour": "^1.2.3",
     "meteor-node-stubs": "~0.2.4",
     "postcss-cssnext": "^2.10.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-addons-pure-render-mixin": "^15.5.2",
+    "react-dom": "^15.5.4",
+    "react-meteor-data": "^0.2.10"
   },
   "devDependencies": {
     "@types/meteor": "^1.4.1",
