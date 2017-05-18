@@ -16,7 +16,7 @@ export default class HelloWorld extends React.Component<{}, {}> {
 Meteor.startup(() => {
     render(<HelloWorld />, document.getElementById('react-app'))
     if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/sw.js', { scope: './' })
         // .then((registration) => {
         //     console.log('Service worker is registered!')
         // })

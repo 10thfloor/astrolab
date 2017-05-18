@@ -7,7 +7,7 @@ Meteor.startup(() => {
       email: 'test@test.com',
       password: 'test',
       profile: {
-          screen: 'Friendly Robot.'
+          screen: 'Friendly Robot'
       }
     })
     console.log('Inserting test user account.')

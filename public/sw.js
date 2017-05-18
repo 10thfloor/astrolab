@@ -11,7 +11,8 @@ self.addEventListener('install', (event) => {
         '/offline.html',
         '/styles/reset.css',
         '/styles/global.css',
-        '/styles/offline.css'
+        '/styles/offline.css',
+        '/images/icons/favicon.ico'
     ])).then(self.skipWaiting());
   }));
 });
