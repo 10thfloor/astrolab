@@ -4,9 +4,11 @@ import { Accounts } from 'meteor/accounts-base'
 Meteor.startup(() => {
   if (!Meteor.users.find().count()) {
     Accounts.createUser({
-      email: 'mack@test.com',
+      email: 'test@test.com',
       password: 'test',
-      profile: {}
+      profile: {
+          screen: 'Friendly Robot.'
+      }
     })
     console.log('Inserting test user account.')
   }

@@ -23,8 +23,10 @@ const Loading = glamorous.div({
     marginTop: '1rem'
 })
 
+type Profile = { [screen: string]: string }
 interface HelloUser {
     _id: string;
+    profile: Profile;
 }
 
 class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loading: boolean }, {}> {
@@ -41,7 +43,7 @@ class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loa
             <div style={{ marginTop: '1rem' }}>
                 <div style={{ marginBottom: '1rem' }}> Logged in: {this.props.loggedin ? 'Yes' : 'No'}</div>
                 <div> Users: </div>
-                {this.props.users.map((user) => (<div key={user._id}>{user._id}</div>))}
+                {this.props.users.map((user) => (<div key={user._id}>{user.profile.screen}</div>))}
             </div>
           }
          </div>

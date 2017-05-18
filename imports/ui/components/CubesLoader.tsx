@@ -53,18 +53,18 @@ const loaderStyles = ({ color }) => ({
 })
 
 const CubesLoader = ({ color }) => {
-    const css = loaderStyles({ color })
+    const _ = loaderStyles({ color })
     return (
-        <div className={`${css['sk-cube-grid']}`}>
-            <div className={`${css['sk-cube']} ${css['sk-cube1']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube2']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube3']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube4']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube5']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube6']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube7']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube8']}`} />
-            <div className={`${css['sk-cube']} ${css['sk-cube9']}`} />
+        <div className={`${_['sk-cube-grid']}`}>
+            <div className={`${_['sk-cube']} ${_['sk-cube1']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube2']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube3']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube4']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube5']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube6']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube7']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube8']}`} />
+            <div className={`${_['sk-cube']} ${_['sk-cube9']}`} />
         </div>
     )
 }
