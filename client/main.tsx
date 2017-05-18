@@ -17,12 +17,12 @@ Meteor.startup(() => {
     render(<HelloWorld />, document.getElementById('react-app'))
     if (navigator.serviceWorker) {
         navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-                console.log('Service worker is registered!')
-            })
-            .catch((error) => {
-                console.log('Service worker failed ', error)
-        })
+        // .then((registration) => {
+        //     console.log('Service worker is registered!')
+        // })
+        // .catch((error) => {
+        //     console.log('Service worker failed ', error)
+        // })
     }
 })
 
