@@ -1,5 +1,5 @@
 
-// Service worker created by Ilan Schemoul alias NitroBAY as a specific Service Worker for Meteor
+// Service worker created by Ilan Schemoul as a specific Service Worker for Meteor
 // Please see https://github.com/NitroBAY/meteor-service-worker for the official project source
 
 const HTMLToCache = '/';
@@ -7,7 +7,12 @@ const version = 'MSW V0.3';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(version).then((cache) => {
-    cache.add(HTMLToCache).then(self.skipWaiting());
+    cache.add(HTMLToCache).then(cache.addAll([
+        '/offline.html',
+        '/styles/reset.css',
+        '/styles/global.css',
+        '/styles/offline.css'
+    ])).then(self.skipWaiting());
   }));
 });
 
@@ -63,7 +68,7 @@ self.addEventListener('fetch', (event) => {
     }).catch(() => {
       if (hasHash(event.request.url)) return caches.match(event.request.url);
       // If the request URL hasn't been served from cache and isn't sockjs we suppose it's HTML
-      else if (!/\/sockjs\//.test(event.request.url)) return caches.match(HTMLToCache);
+      else if (!/\/sockjs\//.test(event.request.url)) return caches.match('/offline.html');
       // Only for sockjs
       return new Response('No connection to the server', {
         status: 503,

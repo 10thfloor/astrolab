@@ -35,7 +35,9 @@ class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loa
           Meteor, TypeScript, CSS-Next, React
           <div> {
             this.props.loading ?
-            <CubesLoader color="white"/> :
+            <div className="right-top">
+                <CubesLoader color="white" />
+            </div> :
             <div style={{ marginTop: '1rem' }}>
                 <div style={{ marginBottom: '1rem' }}> Logged in: {this.props.loggedin ? 'Yes' : 'No'}</div>
                 <div> Users: </div>

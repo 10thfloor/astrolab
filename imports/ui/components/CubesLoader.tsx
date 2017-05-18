@@ -13,7 +13,8 @@ const cubeAnimation = () => {
 const loaderStyles = ({ color }) => ({
     'sk-cube-grid' : css({
         'width': '40px',
-        'height': '40px'
+        'height': '40px',
+        'display': 'inline-block'
     }),
     'sk-cube' : css({
         'width': '33%',
