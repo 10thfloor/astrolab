@@ -6,11 +6,11 @@ import { render } from 'react-dom'
 import Hello from '../imports/ui/components/Hello'
 
 export default class HelloWorld extends React.Component<{}, {}> {
-  render() {
-    return (
-      <Hello />
-    )
-  }
+    render() {
+        return (
+            <Hello />
+        )
+    }
 }
 
 Meteor.startup(() => {

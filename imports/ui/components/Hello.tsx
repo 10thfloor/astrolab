@@ -5,13 +5,13 @@ import CubesLoader from './CubesLoader'
 import glamorous from 'glamorous'
 
 const WelcomeMessage = glamorous.div({
-  width: '100%',
-  padding: '1rem',
-  margin: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  textShadow: '0px 0px 2px #2C272D'
+    width: '100%',
+    padding: '1rem',
+    margin: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textShadow: '0px 0px 2px #2C272D'
 })
 
 const Loading = glamorous.div({
@@ -30,27 +30,27 @@ interface HelloUser {
 }
 
 class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loading: boolean }, {}> {
-  render() {
-    return (
-    <div>
-        <WelcomeMessage>
-          Meteor, TypeScript, CSS-Next, React
-          <div> {
-            this.props.loading ?
-            <div className="right-top">
-                <CubesLoader color="white" />
-            </div> :
-            <div style={{ marginTop: '1rem' }}>
-                <div style={{ marginBottom: '1rem' }}> Logged in: {this.props.loggedin ? 'Yes' : 'No'}</div>
-                <div> Users: </div>
-                {this.props.users.map((user) => (<div key={user._id}>{user.profile.screen}</div>))}
+    render() {
+        return (
+            <div>
+                <WelcomeMessage>
+                    Meteor, TypeScript, CSS-Next, React
+                    <div> {
+                        this.props.loading ?
+                            <div className="right-top">
+                                <CubesLoader color="white" />
+                            </div> :
+                            <div style={{ marginTop: '1rem' }}>
+                                <div style={{ marginBottom: '1rem' }}> Logged in: {this.props.loggedin ? 'Yes' : 'No'}</div>
+                                <div> Users: </div>
+                                {this.props.users.map((user) => (<div key={user._id}>{user.profile.screen}</div>))}
+                            </div>
+                    }
+                    </div>
+                </WelcomeMessage>
             </div>
-          }
-         </div>
-        </WelcomeMessage>
-    </div>
-    )
-  }
+        )
+    }
 }
 
 export default createContainer(() => {
