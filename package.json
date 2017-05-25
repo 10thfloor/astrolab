@@ -8,10 +8,10 @@
   "dependencies": {
     "babel-runtime": "^6.20.0",
     "bcrypt": "^1.0.2",
+    "fibers": "^1.0.15",
     "glamor": "^2.20.25",
     "glamorous": "^3.14.0",
     "meteor-node-stubs": "~0.2.4",
-    "postcss-cssnext": "^2.10.0",
     "react": "^15.5.4",
     "react-addons-pure-render-mixin": "^15.5.2",
     "react-dom": "^15.5.4",
@@ -22,10 +22,19 @@
     "@types/react": "^15.0.24",
     "@types/react-dom": "^15.5.0",
     "@types/service_worker_api": "0.0.9",
-    "autoprefixer": "^7.0.1"
+    "postcss-cssnext": "^2.10.0",
+    "autoprefixer": "^7.0.1",
+    "postcss-at-rules-variables": "^0.1.1",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-each": "^0.10.0",
+    "postcss-for": "^2.1.1"
   },
   "postcss": {
     "plugins": {
+      "postcss-at-rules-variables": {},
+      "postcss-for": {},
+      "postcss-each": {},
+      "postcss-conditionals": {},
       "postcss-cssnext": {
         "autoprefixer": {
           "browsers": [
