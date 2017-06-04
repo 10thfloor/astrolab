@@ -22,3 +22,5 @@ dynamic-import
 dburles:eslint
 alanning:roles
 
+apollo
+swydo:graphql
