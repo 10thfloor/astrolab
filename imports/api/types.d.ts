@@ -15,6 +15,10 @@ declare module "*.schema.gql" {
     export = typeDefs
 }
 
+declare module "*.queries.gql" {
+
+}
+
 declare module 'meteor/apollo' {
     import { NetworkInterface } from 'apollo-client';
     import { GraphQLSchema } from 'graphql';

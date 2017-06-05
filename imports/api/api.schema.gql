@@ -2,5 +2,23 @@ type Query {
   say: String
 }
 
+type Student {
+  id: Int!
+  email: String
+}
+
+type Instructor {
+    id: Int!
+    email: String
+}
+
+type Class {
+    start: Int!
+    end: Int!
+    instructor: Instructor
+    students: [Student]
+}
+
+
 
 

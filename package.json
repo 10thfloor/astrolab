@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "scripts": {
     "start": "meteor run",
-    "build:production": "meteor build .deploy --directory"
+    "build:production": "meteor build .deploy --directory",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "apollo-client": "^1.4.0",
@@ -25,16 +27,22 @@
     "react-meteor-data": "^0.2.10"
   },
   "devDependencies": {
+    "@storybook/react": "^3.0.1",
     "@types/meteor": "^1.4.1",
     "@types/react": "^15.0.24",
     "@types/react-dom": "^15.5.0",
     "@types/service_worker_api": "0.0.9",
-    "postcss-cssnext": "^2.10.0",
     "autoprefixer": "^7.0.1",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-conditionals": "^2.1.0",
+    "postcss-cssnext": "^2.10.0",
     "postcss-each": "^0.10.0",
-    "postcss-for": "^2.1.1"
+    "postcss-for": "^2.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-root-slash-import": "^1.1.0"
   },
   "postcss": {
     "plugins": {
