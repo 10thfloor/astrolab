@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "apollo-client": "^1.4.0",
-    "babel-runtime": "^6.20.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
@@ -38,11 +37,14 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
+    "babel-runtime": "^6.23.0",
+    "glamorous": "^3.21.0",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-conditionals": "^2.1.0",
     "postcss-cssnext": "^2.10.0",
     "postcss-each": "^0.10.0",
-    "postcss-for": "^2.1.1"
+    "postcss-for": "^2.1.1",
+    "react-addons-pure-render-mixin": "^15.5.2"
   },
   "postcss": {
     "plugins": {
