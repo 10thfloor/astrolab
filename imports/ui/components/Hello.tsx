@@ -10,8 +10,7 @@ const WelcomeMessage = glamorous.div({
     margin: 0,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    textShadow: '0px 0px 2px #2C272D'
+    justifyContent: 'center'
 })
 
 const Loading = glamorous.div({
@@ -34,15 +33,17 @@ class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loa
         return (
             <div>
                 <WelcomeMessage>
-                    Meteor, TypeScript, CSS-Next, React
+                    <p className="title">LMS V2</p>
                     <div> {
                         this.props.loading ?
                             <div className="right-top">
                                 <CubesLoader color="white" />
                             </div> :
                             <div style={{ marginTop: '1rem' }}>
-                                <div style={{ marginBottom: '1rem' }}> Logged in: {this.props.loggedin ? 'Yes' : 'No'}</div>
-                                <div> Users: </div>
+                                <div style={{ marginBottom: '1rem' }}> 
+                                    <span className="sub-title tk-fira-sans">Logged in:</span> {this.props.loggedin ? 'Yes' : 'No'}
+                                </div>
+                                <div className="sub-title tk-fira-sans"> Users: </div>
                                 {this.props.users.map((user) => (<div key={user._id}>{user.profile.screen}</div>))}
                             </div>
                     }

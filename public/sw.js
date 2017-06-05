@@ -12,7 +12,7 @@ self.addEventListener('install', (event) => {
         '/styles/reset.css',
         '/styles/global.css',
         '/styles/offline.css',
-        '/images/icons/favicon.ico'
+        '/images/icons/favicon.ico',
     ])).then(self.skipWaiting());
   }));
 });
