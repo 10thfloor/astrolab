@@ -1,7 +1,12 @@
+
 export const resolvers = {
     Query: {
-        say() {
-            return 'hello world'
-        }
-    }
+        user(root, args, context) {
+            return context.user
+        },
+    },
+    User: {
+        emails: ({ emails }) => emails,
+        profile: ({ profile }) => profile
+    },
 }

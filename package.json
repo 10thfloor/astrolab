@@ -6,7 +6,7 @@
     "start": "meteor run",
     "build:production": "meteor build .deploy --directory",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook"
   },
   "dependencies": {
     "apollo-client": "^1.4.0",
@@ -15,15 +15,20 @@
     "express": "^4.15.3",
     "fibers": "^1.0.15",
     "glamor": "^2.20.25",
-    "glamorous": "^3.14.0",
+    "glamorous": "^3.21.0",
     "graphql": "^0.10.1",
     "graphql-server-express": "^0.8.0",
+    "graphql-tag": "^2.2.1",
     "graphql-tools": "^1.0.0",
     "meteor-node-stubs": "~0.2.4",
     "react": "^15.5.4",
     "react-addons-pure-render-mixin": "^15.5.2",
+    "react-apollo": "^1.4.2",
     "react-dom": "^15.5.4",
-    "react-meteor-data": "^0.2.10"
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.0.1",
@@ -38,13 +43,12 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
     "babel-runtime": "^6.23.0",
-    "glamorous": "^3.21.0",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-conditionals": "^2.1.0",
     "postcss-cssnext": "^2.10.0",
     "postcss-each": "^0.10.0",
     "postcss-for": "^2.1.1",
-    "react-addons-pure-render-mixin": "^15.5.2"
+    "redux-devtools-extension": "^2.13.2"
   },
   "postcss": {
     "plugins": {

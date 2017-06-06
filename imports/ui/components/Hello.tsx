@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { createContainer } from 'react-meteor-data'
 import CubesLoader from './CubesLoader'
+
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import glamorous from 'glamorous'
 
@@ -28,23 +30,24 @@ interface HelloUser {
     profile: Profile;
 }
 
-class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loading: boolean }, {}> {
+class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUser}, {}> {
     render() {
+        const user = this.props.currentUser
         return (
             <div>
                 <WelcomeMessage>
                     <p className="title">LMS V2</p>
                     <div> {
-                        this.props.loading ?
+                        this.props.userLoading ?
                             <div className="right-top">
                                 <CubesLoader color="white" />
                             </div> :
                             <div style={{ marginTop: '1rem' }}>
-                                <div style={{ marginBottom: '1rem' }}> 
-                                    <span className="sub-title tk-fira-sans">Logged in:</span> {this.props.loggedin ? 'Yes' : 'No'}
+                                <div style={{ marginBottom: '1rem' }}>
+                                    <span className="sub-title tk-fira-sans">Logged in:</span> {user ? 'Yes' : 'No'}
                                 </div>
-                                <div className="sub-title tk-fira-sans"> Users: </div>
-                                {this.props.users.map((user) => (<div key={user._id}>{user.profile.screen}</div>))}
+                                <div className="sub-title tk-fira-sans"> User: </div>
+                                <div>{user && user.profile.screen}</div>
                             </div>
                     }
                     </div>
@@ -54,15 +57,28 @@ class Hello extends React.Component<{ loggedin: boolean, users: HelloUser[], loa
     }
 }
 
-export default createContainer(() => {
-    const handle = Meteor.subscribe('users')
-    const loading = !handle.ready()
-    const users = Meteor.users.find({})
-    const usersExist = !loading && !!users
-    return {
-        loading,
-        users: usersExist ? users.fetch() : [],
-        loggedin: Meteor.userId()
+const GET_USER_DATA = gql`
+  query getCurrentUser {
+    user {
+      profile {
+        screen
+      }
+      _id
     }
-}, Hello)
+  }
+`
+
+const withData = graphql(GET_USER_DATA, {
+    props: ({ data: { user, error, loading, refetch }}) => {
+        if (loading) { return { userLoading: true }}
+        if (error) { return { hasErrors: true }}
+
+        return {
+            currentUser: user,
+            refetch,
+        }
+    },
+})
+
+export default withData(Hello)
 

@@ -1,23 +1,43 @@
 type Query {
-  say: String
+  user: User
 }
 
-type Student {
-  id: Int!
-  email: String
+type User {
+  _id: String
+  emails: [Email]
+  profile: Profile
 }
 
-type Instructor {
-    id: Int!
-    email: String
+type Email {
+  address: String
+  verified: Boolean
 }
 
-type Class {
-    start: Int!
-    end: Int!
-    instructor: Instructor
-    students: [Student]
+type Profile {
+    screen: String
 }
+
+# type Student implements User {
+#     _id: String
+#     emails: [Email]
+#     profile: Profile
+#     studentId: String
+# }
+
+# type Instructor implements User {
+#     _id: String
+#     emails: [Email]
+#     profile: Profile
+#     instructorId: String
+# }
+
+# type Class {
+#     _id: String
+#     start: Int!
+#     end: Int!
+#     instructor: Instructor
+#     students: [Student]
+# }
 
 
 
