@@ -1,10 +1,11 @@
 import * as React from 'react'
-import CubesLoader from './CubesLoader'
 
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 import glamorous from 'glamorous'
+
+import CubesLoader from './CubesLoader'
 
 const WelcomeMessage = glamorous.div({
     width: '100%',
@@ -47,7 +48,7 @@ class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUse
                                     <span className="sub-title tk-fira-sans">Logged in:</span> {user ? 'Yes' : 'No'}
                                 </div>
                                 <div className="sub-title tk-fira-sans"> User: </div>
-                                <div>{user && user.profile.screen}</div>
+                                <div>{(user && user.profile.screen) || 'None'}</div>
                             </div>
                     }
                     </div>
@@ -69,13 +70,12 @@ const GET_USER_DATA = gql`
 `
 
 const withData = graphql(GET_USER_DATA, {
-    props: ({ data: { user, error, loading, refetch }}) => {
+    props: ({ data: { user, error, loading }}) => {
         if (loading) { return { userLoading: true }}
         if (error) { return { hasErrors: true }}
 
         return {
-            currentUser: user,
-            refetch,
+            currentUser: user
         }
     },
 })

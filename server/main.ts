@@ -1,12 +1,8 @@
-import { Meteor } from 'meteor/meteor'
-import '../imports/startup/fixtures'
-import '../imports/startup/apollo-server'
+import '../imports/startup/server/apollo'
+import  '../imports/startup/server/publications'
+import '../imports/startup/server/fixtures'
 
-Meteor.users.allow({
-  update() {
-    return true
-  }
-})
+
 
 
 
