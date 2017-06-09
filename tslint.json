@@ -1,6 +1,7 @@
 {
     "extends": ["tslint-react"],
     "rules": {
+        "jsx-boolean-value": false,
         "ban": [true, ["_", "isDefined"]],
         "class-name": true,
         "align": [
