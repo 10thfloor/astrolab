@@ -3,27 +3,7 @@ import * as React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-import glamorous from 'glamorous'
-
-import CubesLoader from './CubesLoader'
-
-const WelcomeMessage = glamorous.div({
-    width: '100%',
-    padding: '1rem',
-    margin: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
-})
-
-const Loading = glamorous.div({
-    width: '100%',
-    padding: '1rem',
-    margin: 0,
-    textAlign: 'center',
-    backgroundColor: 'rgba(0,0,0,0.1)',
-    marginTop: '1rem'
-})
+import styled from 'styled-components'
 
 type Profile = { [screen: string]: string }
 interface HelloUser {
@@ -31,6 +11,9 @@ interface HelloUser {
     profile: Profile;
 }
 
+const WelcomeMessage = styled.div`
+    padding: 1rem;
+`
 class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUser}, {}> {
     render() {
         const user = this.props.currentUser
@@ -41,7 +24,7 @@ class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUse
                     <div> {
                         this.props.userLoading ?
                             <div className="right-top">
-                                <CubesLoader color="white" />
+                                Loading...
                             </div> :
                             <div style={{ marginTop: '1rem' }}>
                                 <div style={{ marginBottom: '1rem' }}>
