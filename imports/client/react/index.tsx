@@ -1,19 +1,23 @@
 import * as React from 'react'
-import Hello from './components/HelloComponent'
 
+import { Route, Switch } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
+
+import createHistory from 'history/createBrowserHistory'
+
+import HelloComponent from './components/HelloComponent'
 import PrivateRoute from './components/PrivateRoute'
 
-import {
-    BrowserRouter as Router,
-    Route
-} from 'react-router-dom'
+export const history = createHistory()
 
 export default class App extends React.Component<{}, {}> {
     render() {
         return (
-            <Router>
-                <Route exact path="/" component={Hello} />
-            </Router>
+            <ConnectedRouter history={history}>
+                <Switch>
+                    <Route exact path="/" component={HelloComponent} />
+                </Switch>
+            </ConnectedRouter>
         )
     }
 }
