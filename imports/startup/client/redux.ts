@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import {
@@ -9,6 +10,9 @@ import {
 import { history } from '../../client/react/index'
 import { client } from './apollo'
 
+import rootSaga from '../../client/redux/rootSaga'
+const sagaMiddleWare = createSagaMiddleware()
+
 export const store = createStore(
     combineReducers({
         apollo: client.reducer(),
@@ -17,7 +21,11 @@ export const store = createStore(
     composeWithDevTools(
         applyMiddleware(
             client.middleware(),
-            routerMiddleware(history)
+            routerMiddleware(history),
+            sagaMiddleWare
         ),
     )
 )
+
+sagaMiddleWare.run(rootSaga)
+
