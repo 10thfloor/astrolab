@@ -1,0 +1,13 @@
+meteor:
+    build: ../.deploy
+    ports:
+        - "3000:3000"
+    links:
+        - mongo
+    environment:
+        - PORT=3000
+        - ROOT_URL=http://localhost:3000
+        - MONGO_URL=mongodb://mongo:27017/meteor
+mongo:
+  image: mongo:3.2
+  command: mongod --smallfiles

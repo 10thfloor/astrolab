@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/LMSv2
+    docker:
+        - image: circleci/node:4
+    steps:
+
+        - checkout
+        - setup_remote_docker  
+
+        - run: curl https://install.meteor.com | /bin/sh
+
+        - save_cache:
+            key: meteor_source
+            paths:
+                - ~/.meteor
+
+        - run: meteor npm install --quiet
+        - run: meteor build --directory .deploy
+        - run: 
+            command: docker-compose -f .circleci/compose.yml up
+            background: true
+        - run: |
+            sleep 80
+            docker run --network container:circleci_meteor_1 \
+              appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused http://localhost:3000/
+        - deploy:
+            name: Build and push Docker image
+            command: |
+                docker build -t redacademy/meteor-container:latest .deploy
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker push redacademy/meteor-container:latest
+
+
+
+
+

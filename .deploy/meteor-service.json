@@ -1,0 +1,20 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "meteor-deploy-service"
+  },
+  "spec": {
+    "ports": [
+      {
+        "port": 80,
+        "targetPort": 8080
+      }
+    ],
+    "selector": {
+      "name": "meteor"
+    },
+    "sessionAffinity": "ClientIP",
+    "type": "LoadBalancer"
+  }
+}

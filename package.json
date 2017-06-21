@@ -45,7 +45,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-root-slash-import": "^1.1.0",
-    "babel-runtime": "^6.23.0",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-conditionals": "^2.1.0",
     "postcss-cssnext": "^2.10.0",
