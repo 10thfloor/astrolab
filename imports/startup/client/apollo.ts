@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor'
 import ApolloClient from 'apollo-client'
-import { meteorClientConfig, createNetworkInterface } from 'meteor/apollo'
+import { meteorClientConfig, createMeteorNetworkInterface } from 'meteor/apollo'
 
 export const client = new ApolloClient(meteorClientConfig({
-    networkInterface: createNetworkInterface({
+    networkInterface: createMeteorNetworkInterface({
         uri: Meteor.absoluteUrl('graphql'),
         useMeteorAccounts: true
     })

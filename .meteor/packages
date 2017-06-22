@@ -24,3 +24,4 @@ alanning:roles
 
 apollo
 swydo:graphql
+sevki:prometheus-exporter

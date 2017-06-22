@@ -25,7 +25,7 @@ declare module 'meteor/apollo' {
     import { ApolloStateSelector } from 'apollo-client/ApolloClient';
     import { CustomResolverMap } from 'apollo-client/data/readFromStore';
 
-    export function createNetworkInterface(customNetworkInterface?: CustomNetworkInterface): NetworkInterface;
+    export function createMeteorNetworkInterface(customNetworkInterface?: CustomNetworkInterface): NetworkInterface;
 
     export function meteorClientConfig(customClientConfig?: ApolloClientConfig): any;
 
