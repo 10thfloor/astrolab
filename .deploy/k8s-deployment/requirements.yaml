@@ -1,10 +1,16 @@
 dependencies:
-  - name: meteor-mongodb-replicaset
+  - name: mongodb-replicaset
     version: 1.1.0
     repository: https://github.com/kubernetes/charts/tree/master/stable/mongodb-replicaset
-  - name: meteor-prometheus
+    import-values:
+      - mongodb-replicaset
+  - name: prometheus
     version: 3.0.2
     repository: https://github.com/kubernetes/charts/tree/master/stable/prometheus
-  - name: meteor-graphana
+    import-values:
+      - prometheus
+  - name: grafana
     version: 0.3.6
     repository: https://github.com/kubernetes/charts/tree/master/stable/grafana
+    import-values:
+      - grafana

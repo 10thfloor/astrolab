@@ -1,6 +1,4 @@
 # Default values for k8s-deployment.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
 replicaCount: 1
 image:
   repository: redacademy/meteor-container
@@ -31,4 +29,12 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
+
+exports:
+  prometheus:
+    - ok: true
+  grafana: 
+    - ok: true
+  mongodb-replicaset:
+    - ok: true
 
