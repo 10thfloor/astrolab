@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Meteor App k8s Deployment in a Box
+name: meteor-deployment
+version: 0.0.1
