@@ -1,9 +1,26 @@
-FROM redacademy/nodebase
+FROM mhart/alpine-node:4
+
+# Install Dependencies
+
+ENV NPM_VERSION=4.6.1
+
+RUN apk add --no-cache make gcc g++ python
+RUN rm -rf /var/cache/apk/*
+
+RUN npm i -g npm@$NPM_VERSION
+RUN npm i -g pm2
+
+RUN addgroup -S meteor
+RUN adduser -S meteor -G meteor -s /bin/sh
+
+# Install Meteor App
 
 COPY bundle /home/meteor/bundle
 
 WORKDIR /home/meteor/bundle/programs/server
 RUN npm install
+
+# Start the App!
 
 WORKDIR /home/meteor/bundle
 ENTRYPOINT ["pm2-docker", "main.js"]
