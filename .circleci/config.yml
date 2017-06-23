@@ -28,7 +28,7 @@ jobs:
         - deploy:
             name: Build and push Docker image
             command: |
-                TAG=0.1.$CIRCLE_BUILD_NUM
+                TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
                 docker build -t redacademy/meteor-container:$TAG .deploy
                 docker login -u $DOCKER_USER -p $DOCKER_PASS
                 docker push redacademy/meteor-container:$TAG
