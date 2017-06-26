@@ -7,24 +7,29 @@ image:
 
 service:
   name: meteor-deploy-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "_health"
   externalPort: 80
   internalPort: 8080
-  type: LoadBalancer
+  type: ClusterIP
 
 ingress:
-  enabled: false
-  # Used to create Ingress record (should used with service.type: ClusterIP).
-  hosts:
-    # - chart-example.local
+  enabled: true
   annotations:
-    # kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/affinity: "cookie"
+    ingress.kubernetes.io/session-cookie-name: "route"
+    ingress.kubernetes.io/session-cookie-hash: "sha1"
     # kubernetes.io/tls-acme: "true"
+  hosts: 
+    - meteor.test.com
   tls:
     # Secrets must be manually created in the namespace.
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
-
+  
 resources:
   limits:
     cpu: 100m
@@ -33,11 +38,21 @@ resources:
     cpu: 100m
     memory: 128Mi
 
-exports:
-  prometheus:
-    name: meteor-prometheus
-  grafana: 
-    name: meteor-grafana
-  mongodb:
-    name: meteor-mongodb-replset
+grafana:
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      hosts: 
+        - grafana.test.com
 
+prometheus:
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      hosts: 
+        - prometheus.test.com
+    
