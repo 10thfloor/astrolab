@@ -2,15 +2,12 @@ dependencies:
   - name: mongodb-replicaset
     version: 1.1.0
     repository: https://kubernetes-charts.storage.googleapis.com
-    import-values:
-      - mongodb-replicaset
   - name: prometheus
     version: 3.0.2
     repository: https://kubernetes-charts.storage.googleapis.com
-    import-values:
-      - prometheus
   - name: grafana
     version: 0.3.6
     repository: https://kubernetes-charts.storage.googleapis.com
-    import-values:
-      - grafana
+  - name: nginx-ingress
+    version: 0.6.0
+    repository: https://kubernetes-charts.storage.googleapis.com
