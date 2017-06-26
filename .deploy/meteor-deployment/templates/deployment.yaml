@@ -18,13 +18,13 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: PORT
-          value: {{ .Values.service.internalPort }}
+          value: "{{ .Values.service.internalPort }}"
         - name: ROOT_URL
-          value: http://192.168.99.100
+          value: "http://192.168.99.100"
         - name: MONGO_URL
-          value: mongodb://meteor-mongodb-replicaset:27017/meteordb?replicaSet=rs0
+          value: "mongodb://{{ .Release.Name }}-mongodb-replicaset:27017/meteordb?replicaSet=rs0"
         - name: MONGO_OPLOG_URL
-          value: mongodb://meteor-mongodb-replicaset:27017/local?authSource=database&replicaSet=rs0
+          value: "mongodb://{{ .Release.Name }}-mongodb-replicaset:27017/local?authSource=database&replicaSet=rs0"
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:

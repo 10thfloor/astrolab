@@ -1,0 +1,24 @@
+dependencies:
+- condition: ""
+  enabled: false
+  import-values: null
+  name: mongodb-replicaset
+  repository: https://kubernetes-charts.storage.googleapis.com
+  tags: null
+  version: 1.1.0
+- condition: ""
+  enabled: false
+  import-values: null
+  name: prometheus
+  repository: https://kubernetes-charts.storage.googleapis.com
+  tags: null
+  version: 3.0.2
+- condition: ""
+  enabled: false
+  import-values: null
+  name: grafana
+  repository: https://kubernetes-charts.storage.googleapis.com
+  tags: null
+  version: 0.3.6
+digest: sha256:d3cde557362d8031443877a435978363bc9262a203ab9066b3846605107140f8
+generated: 2017-06-24T16:41:07.644032643-07:00

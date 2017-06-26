@@ -4,11 +4,13 @@ image:
   repository: redacademy/meteor-container
   tag: latest
   pullPolicy: Always
+
 service:
   name: meteor-deploy-service
   externalPort: 80
   internalPort: 8080
   type: LoadBalancer
+
 ingress:
   enabled: false
   # Used to create Ingress record (should used with service.type: ClusterIP).
@@ -22,6 +24,7 @@ ingress:
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
+
 resources:
   limits:
     cpu: 100m
@@ -32,9 +35,9 @@ resources:
 
 exports:
   prometheus:
-    - ok: true
+    name: meteor-prometheus
   grafana: 
-    - ok: true
-  mongodb-replicaset:
-    - ok: true
+    name: meteor-grafana
+  mongodb:
+    name: meteor-mongodb-replset
 
