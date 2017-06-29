@@ -27,5 +27,12 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com
   tags: null
   version: 0.6.0
-digest: sha256:1cedb93824f2532c6505183f3211099f0c07d7eb00a99546fd18929bdb890c23
-generated: 2017-06-26T12:04:07.052012699-07:00
+- condition: ""
+  enabled: false
+  import-values: null
+  name: kube-lego
+  repository: https://kubernetes-charts.storage.googleapis.com
+  tags: null
+  version: 0.1.10
+digest: sha256:58cf9d4ce99e8ce6ee4f49866d50450ce7e8eb0a139ea516d5aa50e5841a0ded
+generated: 2017-06-29T13:49:39.429165374-07:00

@@ -17,20 +17,19 @@ service:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: nginx
     ingress.kubernetes.io/affinity: "cookie"
     ingress.kubernetes.io/session-cookie-name: "route"
     ingress.kubernetes.io/session-cookie-hash: "sha1"
     ingress.kubernetes.io/proxy-read-timeout: 3600
     ingress.kubernetes.io/proxy-send-timeout: 3600
-    # kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
   hosts: 
     - meteor.test.com
   tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
+    - secretName: kube-lego-tls-secret
+      hosts:
+        - meteor.test.com
   
 resources:
   limits:
@@ -39,6 +38,12 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
+
+kube-lego:
+  config:
+    LEGO_EMAIL: mackenzie@redacademy.com  
+    LEGO_SECRET_NAME: kube-lego-tls-secret
+    LEGO_URL: https://acme-v01.api.letsencrypt.org
 
 grafana:
   server:
