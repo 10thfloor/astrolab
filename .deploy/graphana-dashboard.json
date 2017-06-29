@@ -38,10 +38,11 @@
   "hideControls": false,
   "id": null,
   "links": [],
+  "refresh": false,
   "rows": [
     {
       "collapse": false,
-      "height": 280,
+      "height": 253,
       "panels": [
         {
           "aliasColors": {},
@@ -49,17 +50,95 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
-          "fill": 1,
-          "id": 1,
+          "fill": 2,
+          "id": 5,
           "legend": {
-            "alignAsTable": false,
-            "avg": true,
+            "alignAsTable": true,
+            "avg": false,
             "current": true,
-            "max": true,
-            "min": true,
+            "max": false,
+            "min": false,
             "rightSide": false,
-            "show": false,
-            "total": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum (rate (container_cpu_usage_seconds_total{pod_name=~\".*meteor-deployment.*\"}[5m])) by (pod_name)\n",
+              "format": "time_series",
+              "intervalFactor": 10,
+              "legendFormat": "{{ pod_name }}",
+              "refId": "A",
+              "step": 50
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Meteor App CPUs",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
             "values": true
           },
           "lines": true,
@@ -77,24 +156,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sockets_count",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{pod_name=~\".*mongodb-replicaset.*\"}[5m])) by (pod_name)\n",
               "format": "time_series",
               "intervalFactor": 2,
+              "legendFormat": "{{ pod_name }}",
               "refId": "A",
-              "step": 60
-            },
-            {
-              "expr": "sockets_with_livedata_sessions_count",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "B",
-              "step": 60
+              "step": 10
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Sockets Count",
+          "title": "MongoDB CPUs",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -110,7 +183,99 @@
           },
           "yaxes": [
             {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
               "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 259,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 3,
+          "hideTimeOverride": false,
+          "id": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "container_memory_usage_bytes{container_name=\"meteor-deployment\", job=\"kubernetes-nodes\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{ pod_name }}",
+              "refId": "A",
+              "step": 10
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Meteor App Total Memory Used by Pod",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -134,62 +299,46 @@
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
           "fill": 1,
-          "id": 2,
+          "id": 3,
           "legend": {
             "alignAsTable": true,
             "avg": false,
-            "current": false,
+            "current": true,
             "max": false,
             "min": false,
-            "show": false,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 100,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
-          "linewidth": 1,
+          "linewidth": 2,
           "links": [],
           "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "observe_handles_count{chart=\"meteor-deployment-0.0.1\",instance=\"172.17.0.12:8080\",job=\"kubernetes-service-endpoints\",kubernetes_name=\"test-meteor-deployment\",kubernetes_namespace=\"default\"}",
-              "yaxis": 1
-            }
-          ],
+          "seriesOverrides": [],
           "spaceLength": 10,
           "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "observe_handles_count",
+              "expr": "container_memory_usage_bytes{container_name=\"mongodb-replicaset\", job=\"kubernetes-nodes\"}\n",
               "format": "time_series",
               "intervalFactor": 2,
+              "legendFormat": "{{ pod_name }}",
               "refId": "A",
-              "step": 60
-            },
-            {
-              "expr": "oplog_observe_handles_count",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "B",
-              "step": 60
-            },
-            {
-              "expr": "polling_observe_handles_count",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "C",
-              "step": 60
+              "step": 10
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Observe Handles",
+          "title": "MongoDB Total Memory Used by Pod",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -205,7 +354,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "decbytes",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -227,17 +376,6 @@
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": false,
-      "title": "Sockets Count",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 250,
-      "panels": [],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
       "title": "Dashboard Row",
       "titleSize": "h6"
     }
@@ -249,8 +387,8 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2017-06-29T05:22:37.600Z",
+    "to": "2017-06-29T06:34:24.355Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -279,5 +417,5 @@
   },
   "timezone": "browser",
   "title": "Meteor Dashboard",
-  "version": 0
+  "version": 2
 }
