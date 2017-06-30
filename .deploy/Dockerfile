@@ -8,7 +8,6 @@ RUN apk add --no-cache make gcc g++ python
 RUN rm -rf /var/cache/apk/*
 
 RUN npm i -g npm@$NPM_VERSION
-RUN npm i -g pm2
 
 RUN addgroup -S meteor
 RUN adduser -S meteor -G meteor -s /bin/sh
@@ -23,4 +22,4 @@ RUN npm install
 # Start the App!
 
 WORKDIR /home/meteor/bundle
-ENTRYPOINT ["pm2-docker", "main.js"]
+ENTRYPOINT ["node", "main.js"]
