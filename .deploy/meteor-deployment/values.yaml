@@ -5,14 +5,16 @@ image:
   tag: v0.0.3
   pullPolicy: Always
 
+appUrl: http://meteor.mackenziekieran.com
+
 service:
-  name: meteor-deploy-service
+  name: meteor-server
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/path: "/_health"
   externalPort: 80
   internalPort: 8080
-  type: ClusterIP
+  type: NodePort
 
 ingress:
   enabled: true
@@ -22,17 +24,15 @@ ingress:
     ingress.kubernetes.io/session-cookie-hash: "sha1"
     ingress.kubernetes.io/proxy-read-timeout: 3600
     ingress.kubernetes.io/proxy-send-timeout: 3600
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "true"
   hosts: 
     - meteor.mackenziekieran.com
   tls:
     - secretName: kube-lego-tls-secret
       hosts:
-        - meteor.mackenziekieran.com
+       - meteor.mackenziekieran.com
 
-appUrl: http://meteor.mackenziekieran.com
-  
 resources:
   limits:
     cpu: 100m
@@ -55,7 +55,6 @@ grafana:
         kubernetes.io/ingress.class: nginx
       hosts: 
         - grafana.mackenziekieran.com
-
 
 prometheus:
   server:
