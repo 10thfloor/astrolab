@@ -2,17 +2,17 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import IntroScreen from './IntroScreen';
-import StudentHome from './StudentHome';
-import TeacherHome from './TeacherHome';
+import Screen1 from './Screen1';
+import Screen2 from './Screen2';
+import Screen3 from './Screen3';
 
-storiesOf('LMSV2', module)
-  .add('Intro Screen', () => (
-    <IntroScreen />
+storiesOf('Meteor PWA', module)
+  .add('Screen 1', () => (
+    <Screen1 />
   ))
-  .add('Student Screen', () => (
-    <StudentHome />
+  .add('Screen 2', () => (
+    <Screen2 />
   ))
-  .add('Teacher Screen', () => (
-    <TeacherHome />
+  .add('Screen 3', () => (
+    <Screen3 />
   ))
