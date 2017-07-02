@@ -3,20 +3,16 @@
 ## Deploy a Meteor app using Kubernetes, Helm, Stackpoint.io
 
 #### Prerequisites:
-1. Github account connected to [circle.ci]
-(https://circleci.com/)
-    - To automate deploys when you push code to master.
-
-2. Register an account with your favourite Cloud Provider.
+1. Github account connected to [circle.ci](https://circleci.com/)
+2. Register an account with your favourite Cloud Provider. <br/>
 Stackpoint supports **AWS, Google Cloud, DigitalOcean & Microsoft Azure**
-
-3. [Stackpoint.io](https://stackpoint.io) account
-    - Deploy your Meteor app to your favourite Cloud Provider
-
+3. Register a [Stackpoint.io](https://stackpoint.io) account
 4. Install the [Kubernetes cli tools (```kubectl```)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
 
 5. Install [Docker](https://docs.docker.com/engine/installation/) & register a [Docker Hub account](https://hub.docker.com/)
-    - Your Meteor production build will run inside a Docker Container
+
+
+... to be continued
 
 ---
 
