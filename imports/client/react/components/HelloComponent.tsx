@@ -20,18 +20,17 @@ class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUse
         return (
             <div>
                 <WelcomeMessage>
-                    <p className="title">LMS V2</p>
+                    <p className="title">Meteor PWA</p>
                     <div> {
                         this.props.userLoading ?
                             <div className="right-top">
                                 Loading...
                             </div> :
                             <div style={{ marginTop: '1rem' }}>
-                                <div style={{ marginBottom: '1rem' }}>
-                                    <span className="sub-title tk-fira-sans">Logged in:</span> {user ? 'Yes' : 'No'}
+                                <div>
+                                    <span className="sub-title">Logged in:</span> {user ? 'Yes' : 'No'}
                                 </div>
-                                <div className="sub-title tk-fira-sans"> User: </div>
-                                <div>{(user && user.profile.screen) || 'None'}</div>
+                                <div className="sub-title"> User: {(user && user.profile.screen) || 'None'}</div>
                             </div>
                     }
                     </div>

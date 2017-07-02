@@ -4,12 +4,9 @@
 
 #### Prerequisites:
 1. Github account connected to [circle.ci](https://circleci.com/)
-2. Register an account with your favourite Cloud Provider. <br/>
-Stackpoint supports **AWS, Google Cloud, DigitalOcean & Microsoft Azure**
-3. Register a [Stackpoint.io](https://stackpoint.io) account
-4. Install the [Kubernetes cli tools (```kubectl```)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
-
-5. Install [Docker](https://docs.docker.com/engine/installation/) & register a [Docker Hub account](https://hub.docker.com/)
+2. Register an account with [Google Cloud](https://cloud.google.com/)
+3. Install the [Kubernetes cli tools (```kubectl```)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
+4. Install [Docker](https://docs.docker.com/engine/installation/) & register a [Docker Hub account](https://hub.docker.com/)
 
 
 ... to be continued
