@@ -1,5 +1,22 @@
-# meteor-pwa-starter [![CircleCI](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master.svg?style=shield)](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master) [![Code Climate](https://codeclimate.com/github/10thfloor/meteor-pwa-starter/badges/gpa.svg)](https://codeclimate.com/github/10thfloor/meteor-pwa-starter)
-Meteor starter project. 
+# meteor-to-go [![CircleCI](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master.svg?style=shield)](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master) [![Code Climate](https://codeclimate.com/github/10thfloor/meteor-pwa-starter/badges/gpa.svg)](https://codeclimate.com/github/10thfloor/meteor-pwa-starter)
+
+## Deploy a Meteor app using Kubernetes, Helm, Stackpoint.io
+
+#### Prerequisites:
+1. Github account connected to [circle.ci]
+(https://circleci.com/)
+    - To automate deploys when you push code to master.
+
+2. Register an account with your favourite Cloud Provider.
+Stackpoint supports **AWS, Google Cloud, DigitalOcean & Microsoft Azure**
+
+3. [Stackpoint.io](https://stackpoint.io) account
+    - Deploy your Meteor app to your favourite Cloud Provider
+
+4. Install the [Kubernetes cli tools (```kubectl```)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
+
+5. Install [Docker](https://docs.docker.com/engine/installation/) & register a [Docker Hub account](https://hub.docker.com/)
+    - Your Meteor production build will run inside a Docker Container
 
 ---
 

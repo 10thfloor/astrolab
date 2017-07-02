@@ -24,14 +24,17 @@ ingress:
     ingress.kubernetes.io/session-cookie-hash: "sha1"
     ingress.kubernetes.io/proxy-read-timeout: 3600
     ingress.kubernetes.io/proxy-send-timeout: 3600
-    kubernetes.io/ingress.class: "nginx"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    ingress.kubernetes.io/use-http2: "true"
     kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
   hosts: 
     - meteor.mackenziekieran.com
   tls:
-    - secretName: kube-lego-tls-secret
+    - secretName: meteor-tls-secret
       hosts:
-       - meteor.mackenziekieran.com
+      - meteor.mackenziekieran.com
+      
 
 resources:
   limits:
@@ -43,9 +46,8 @@ resources:
 
 kube-lego:
   config:
-    LEGO_EMAIL: mackenzie@redacademy.com  
-    LEGO_SECRET_NAME: kube-lego-tls-secret
-    LEGO_URL: https://acme-v01.api.letsencrypt.org
+    LEGO_EMAIL: "remember.mackenzie@gmail.com"
+    LEGO_URL: "https://acme-v01.api.letsencrypt.org/directory"
 
 grafana:
   server:
