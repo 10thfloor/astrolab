@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/LMSv2
+    working_directory: ~/MeteorApp
     docker:
         - image: circleci/node:4
     steps:

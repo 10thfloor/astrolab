@@ -1,6 +1,10 @@
 # Changelog
 Summary of release changes
 
+## 0.0.4
+- The app was tested on Google Container Engine and the Helm install works! (With HTTPS)!
+- The cluster should be created manually, and Firewall rules must be set manually as well.
+
 ## 0.0.3
 - The App, Database & Monitoring tools can now be deployed to a Kubernetes cluster using a custom Helm Chart! 🤘
 - Helm Chart includes Nginx Ingress Controller for Meteor app & Grafana dashboard.

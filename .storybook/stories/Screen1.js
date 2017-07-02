@@ -12,7 +12,6 @@ injectGlobal`
     }
 `
 
-
 const Background = styled.div`
     position: absolute;
     top: 0; bottom: 0; right: 0;
@@ -69,7 +68,7 @@ const LoginForm = styled.div`
     text-align:left;
 `
 
-export default class IntroScreen extends React.Component {
+export default class Screen1 extends React.Component {
   showApp(e) {
     e.preventDefault();
     if(this.props.showApp) this.props.showApp();
@@ -79,8 +78,7 @@ export default class IntroScreen extends React.Component {
     return (
     <Background >
             <LoginForm>
-                <p>LMS VERSION 2</p>
-                <p>JOIN | ENTER</p>
+                <p>Hello World</p>
             </LoginForm>
     </Background>
     );
