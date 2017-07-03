@@ -6,17 +6,34 @@
 <span><img src="http://doc.rultor.com/images/docker-logo.png" width="142"></span>
 <span><img src="https://www.devintent.com/assets/google-cloud-logo-icon-128px.png" width="100"></span>
 <span><img src="https://kubernetes.io/images/favicon.png" width="100"></span>
-<span><img src="https://deis.com/assets/images/svg/helm-logo.svg" width="100"></span>
+<span><img src="https://deis.com/assets/images/svg/helm-logo.svg" width="100" style="margin-right:10px;"></span>
 <span><img src="https://s3-us-west-2.amazonaws.com/assertible/integrations/circleci-logo.png" width="100"></span>
+
+# Whats in the Box?
+
+#### A modern Meteor App Starter
+- Typescript + React
+- Apollo/Graphql/Graphiql
+- React Storybook
+- Styled components
+- [Prometheus exporter](https://atmospherejs.com/sevki/prometheus-exporter)
+- Jest & Mocha/Chai
+
+#### An all-in-one Meteor deployment (and scaling) workflow:
+- MongoDB Replicaset (3x) with Oplog
+- Automatic HTTPS provisiioning via Let's Encrypt
+- Pre-configured Nginx load-balancer with sticky-sessions
+- Pre-configured Prometheus & Grafana servers for monitoring and alerting
+- Automatic versioning & ```git push``` deploys using CircleCI & Docker
+- Install everything to Kubernetes on Google Cloud with one command, using Helm
+- Git crypt for secrets
+
 
 #### Prerequisites:
 1. Github account connected to [circle.ci](https://circleci.com/)
-2. Register an account with [Google Cloud](https://cloud.google.com/)
+2. Register an account with [Google Cloud](https://cloud.google.com/) & install google cloud cli tools
 3. Install the [Kubernetes cli tools (```kubectl```)](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
 4. Install [Docker](https://docs.docker.com/engine/installation/) & register a [Docker Hub account](https://hub.docker.com/)
-
-
-... to be continued
 
 ---
 
