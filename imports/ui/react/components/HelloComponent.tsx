@@ -21,18 +21,13 @@ class Hello extends React.Component<{userLoading: boolean, currentUser: HelloUse
             <div>
                 <WelcomeMessage>
                     <p className="title">Meteor PWA</p>
-                    <div> {
-                        this.props.userLoading ?
-                            <div className="right-top">
-                                Loading...
-                            </div> :
-                            <div style={{ marginTop: '1rem' }}>
-                                <div>
-                                    <span className="sub-title">Logged in:</span> {user ? 'Yes' : 'No'}
-                                </div>
-                                <div className="sub-title"> User: {(user && user.profile.screen) || 'None'}</div>
+                    <div>
+                        <div style={{ marginTop: '1rem' }}>
+                            <div>
+                                <span className="sub-title">Logged in:</span> {user ? 'Yes' : 'No'}
                             </div>
-                    }
+                            <div className="sub-title"> User: {(user && user.profile.screen) || 'None'}</div>
+                        </div>
                     </div>
                 </WelcomeMessage>
             </div>
@@ -53,9 +48,6 @@ const GET_USER_DATA = gql`
 
 const withData = graphql(GET_USER_DATA, {
     props: ({ data: { user, error, loading }}) => {
-        if (loading) { return { userLoading: true }}
-        if (error) { return { hasErrors: true }}
-
         return {
             currentUser: user
         }

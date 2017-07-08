@@ -19,6 +19,12 @@ declare module "*.queries.gql" {
 
 }
 
+
+declare module "meteor/webapp" {
+    var WebApp:any;
+    export = WebApp
+}
+
 declare module 'meteor/apollo' {
     import { NetworkInterface } from 'apollo-client';
     import { GraphQLSchema } from 'graphql';
@@ -61,6 +67,7 @@ declare module 'meteor/apollo' {
         useMeteorAccounts?: boolean;
         batchingInterface?: boolean;
         batchInterval?: number;
+        loginToken?: string;
     }
 
     export interface customApolloServerConfig {
