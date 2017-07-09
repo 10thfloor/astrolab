@@ -17,5 +17,14 @@ type Profile {
     screen: String
 }
 
+query getCurrentUser {
+  user {
+    profile {
+      screen
+    }
+    _id
+  }
+}
+
 
 
