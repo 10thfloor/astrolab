@@ -3,6 +3,6 @@
   "extends": "stylelint-config-standard",
   "syntax": "postcss",
   "rules": {
-     "indentation": 4
+     "indentation": 2
   }
 }
