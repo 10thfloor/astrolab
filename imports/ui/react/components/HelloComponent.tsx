@@ -18,19 +18,17 @@ class Hello extends React.Component<{ userLoading: boolean, currentUser: HelloUs
   render() {
     const user = this.props.currentUser
     return (
-      <div>
-        <WelcomeMessage>
-          <p className="title">Meteor PWA</p>
-          <div>
-            <div style={{ marginTop: '1rem' }}>
-              <div>
-                <span className="sub-title">Logged in:</span> {user ? 'Yes' : 'No'}
-              </div>
-              <div className="sub-title"> User: {(user && user.profile.screen) || 'None'}</div>
+      <WelcomeMessage>
+        <p className="title">Astrolab</p>
+        <div>
+          <div style={{ marginTop: '1rem' }}>
+            <div>
+              <span className="sub-title">Logged in:</span> {user ? 'Yes' : 'No'}
             </div>
+            <div className="sub-title"> User: {(user && user.profile.screen) || 'None'}</div>
           </div>
-        </WelcomeMessage>
-      </div>
+        </div>
+      </WelcomeMessage>
     )
   }
 }
@@ -52,7 +50,7 @@ const withData = graphql(GET_USER_DATA, {
       currentUser: user,
       loading
     }
-  },
+  }
 })
 
 export default withData(Hello)

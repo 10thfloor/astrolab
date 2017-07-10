@@ -1,6 +1,6 @@
-# meteor-in-a-box [![CircleCI](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master.svg?style=shield)](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master) [![Code Climate](https://codeclimate.com/github/10thfloor/meteor-pwa-starter/badges/gpa.svg)](https://codeclimate.com/github/10thfloor/meteor-pwa-starter)
+# Astrolab [![CircleCI](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master.svg?style=shield)](https://circleci.com/gh/10thfloor/meteor-pwa-starter/tree/master) [![Code Climate](https://codeclimate.com/github/10thfloor/meteor-pwa-starter/badges/gpa.svg)](https://codeclimate.com/github/10thfloor/meteor-pwa-starter)
 
-### Meteor Dev & Deploy starter using Google Cloud, Kubernetes, Helm, Docker & CircleCi
+### Meteor Dev & Deploy Framework using Google Cloud, Kubernetes, Helm, Docker & CircleCi
 
 <span><img src="http://meteortips.com/assets/images/meteor-logo.png" width="100"></span>
 <span><img src="http://doc.rultor.com/images/docker-logo.png" width="142"></span>
