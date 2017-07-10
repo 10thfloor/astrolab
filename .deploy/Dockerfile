@@ -1,8 +1,7 @@
 FROM mhart/alpine-node:4
+ENV NPM_VERSION=4.6.1
 
 # Install Dependencies
-
-ENV NPM_VERSION=4.6.1
 
 RUN apk add --no-cache make gcc g++ python
 RUN rm -rf /var/cache/apk/*

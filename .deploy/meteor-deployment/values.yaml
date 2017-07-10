@@ -1,11 +1,11 @@
 # Default values for k8s-deployment.
 replicaCount: 1
 image:
-  repository: redacademy/meteor-container
+  repository: astrolab/meteor-container
   tag: v0.0.3
   pullPolicy: Always
 
-appUrl: http://meteor.mackenziekieran.com
+appUrl: http://meteor.astrolab.cloud
 
 service:
   name: meteor-server
@@ -29,11 +29,11 @@ ingress:
     kubernetes.io/tls-acme: "true"
     kubernetes.io/ingress.class: "nginx"
   hosts: 
-    - meteor.mackenziekieran.com
+    - meteor.astrolab.cloud
   tls:
     - secretName: meteor-tls-secret
       hosts:
-      - meteor.mackenziekieran.com
+      - meteor.astrolab.cloud
       
 
 resources:
@@ -46,7 +46,7 @@ resources:
 
 kube-lego:
   config:
-    LEGO_EMAIL: "remember.mackenzie@gmail.com"
+    LEGO_EMAIL: "you@email.com"
     LEGO_URL: "https://acme-v01.api.letsencrypt.org/directory"
 
 grafana:
@@ -56,7 +56,7 @@ grafana:
       annotations:
         kubernetes.io/ingress.class: nginx
       hosts: 
-        - grafana.mackenziekieran.com
+        - grafana.astrolab.cloud
 
 prometheus:
   server:
@@ -65,5 +65,5 @@ prometheus:
       annotations:
         kubernetes.io/ingress.class: nginx
       hosts: 
-        - prometheus.mackenziekieran.com
+        - prometheus.astrolab.cloud
     
