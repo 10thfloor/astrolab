@@ -2,6 +2,7 @@
   "name": "astrolab",
   "private": true,
   "version": "0.9.0",
+  "license": "MIT",
   "scripts": {
     "start:dev": "meteor run",
     "lint": "npm run lint:css",
